@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Input Pemeriksaan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen w-screen overflow-hidden bg-gray-100 flex">
+
+  <aside class="w-24 bg-[#dff4f4] flex flex-col items-center py-6">
+    <a href="dashboard.html">
+    <button class="text-gray-600 mb-10 focus:outline-none focus:ring-2 focus:ring-[#0099a8] focus:ring-offset-1 hover:text-[#0099a8] hover:bg-gray-100 rounded">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-3m-8 0H5a2 2 0 0 1-2-2z"/></svg>
+    </button>
+    </a>
+    <a href="list_pasien.html">
+    <button class="bg-[#0099a8] text-white p-3 rounded-lg shadow-md mb-10 focus:outline-none focus:ring-2 focus:ring-[#0099a8] focus:ring-offset-1 hover:bg-[#007a85]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11 a6.002 6.002 0 0 0-4-5.659V5a2 2 0 1 0-4 0v.341C7.67 6.165 6 8.388 6 11v3.159 c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 1 1-6 0v-1m6 0H9"/></svg>
+    </button>
+    </a>
+    <a href="history.html">
+    <button class="text-gray-600 mb-64 focus:outline-none focus:ring-2 focus:ring-[#0099a8] focus:ring-offset-1 hover:text-[#0099a8] hover:bg-gray-100 rounded">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6M9 6h6m-7 12h8m-5 4h2"/></svg>
+    </button>
+    </a>
+    <a href="akun.html">
+    <button class="text-gray-600 mb-10 mt-10 focus:outline-none focus:ring-2 focus:ring-[#0099a8] focus:ring-offset-1 hover:text-[#0099a8] hover:bg-gray-100 rounded">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4s-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+    </button>
+    </a>
+    <a href="logout.html">
+    <button class="text-gray-600 focus:outline-none focus:ring-2 focus:ring-[#0099a8] focus:ring-offset-1 hover:text-[#0099a8] hover:bg-gray-100 rounded">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+    </button>
+    </a>
+  </aside>
+
+  <main class="flex-1 p-8 overflow-auto">
+    <div class="flex justify-between items-start">
+      <div>
+        <h1 class="text-lg font-bold mb-10">DATA PASIEN</h1>
+      </div>
+      <img src="simrs.jpg" alt="simrs" class="w-10 h-10" />
+    </div>
+
+    <form class="grid grid-cols-2 gap-6 max-w-4xl text-sm">
+      <div>
+        <label class="block font-semibold mb-1">No Reg</label>
+        <input type="text" disabled class="w-full border border-gray-300 px-4 py-2 rounded bg-gray-100 text-gray-700">
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Nama</label>
+        <input type="text" disabled class="w-full border border-gray-300 px-4 py-2 rounded bg-gray-100 text-gray-700">
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Suhu</label>
+        <div class="relative">
+          <input type="text" class="w-full border border-gray-300 px-4 py-2 rounded pr-10">
+          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600">°C</span>
+        </div>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Tinggi Badan</label>
+        <div class="relative">
+          <input type="text" class="w-full border border-gray-300 px-4 py-2 rounded pr-10">
+          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600">cm</span>
+        </div>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Tensi</label>
+        <div class="relative">
+          <input type="text" class="w-full border border-gray-300 px-4 py-2 rounded pr-14">
+          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600">mmHg</span>
+        </div>
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Berat Badan</label>
+        <div class="relative">
+          <input type="text" class="w-full border border-gray-300 px-4 py-2 rounded pr-10">
+          <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600">kg</span>
+        </div>
+      </div>
+    </form>
+
+    <div class="absolute right-8 bottom-8 flex space-x-4">
+      <button type="button" class="bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded text-sm font-semibold">
+        BATAL
+      </button>
+      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold">
+        SIMPAN
+      </button>
+    </div>
+  </main>
+</body>
+</html>
