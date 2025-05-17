@@ -8,10 +8,20 @@ use App\Models\Users;
 class AuthController extends Controller
 {
     /**
+     * 
+     * @OA\Info(
+     *    title="API Documentation",
+     *   version="1.0.0",
+     *   description="API documentation for the application"
+     * )
  * @OA\Post(
  *     path="/api/login",
  *     summary="Login user",
- *     tags={"Auth"},
+ *     tags={"LOGIN DAN AUTENTIKASI"},
+ * @OA\Server(
+ *     url="http://localhost:8000",
+ *     description="Local development server"
+ *      ),
  *     @OA\RequestBody(
  *         required=true,
  *         @OA\JsonContent(
@@ -37,8 +47,8 @@ class AuthController extends Controller
     public function login (Request $request)
     {
         $request->validate([
-            'username' => 'required',
-            'password' => 'required'
+            'USERNAME' => 'required',
+            'PASSWORD' => 'required'
         ]);
         $user = Users::where('USERNAME', $request->username)->first();
 

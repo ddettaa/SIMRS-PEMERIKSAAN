@@ -1,19 +1,15 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "My API",
-        "version": "1.0"
+        "title": "API Documentation",
+        "description": "API documentation for the application",
+        "version": "1.0.0"
     },
-    "servers": [
-        {
-            "url": "http://localhost:8000"
-        }
-    ],
     "paths": {
         "/api/login": {
             "post": {
                 "tags": [
-                    "Auth"
+                    "LOGIN DAN AUTENTIKASI"
                 ],
                 "summary": "Login user",
                 "operationId": "a3b306d14572d1f4bd6c064b3233e7b8",
@@ -52,14 +48,20 @@
                     "403": {
                         "description": "Role not recognized"
                     }
-                }
+                },
+                "servers": [
+                    {
+                        "url": "http://localhost:8000",
+                        "description": "Local development server"
+                    }
+                ]
             }
         }
     },
     "tags": [
         {
-            "name": "Auth",
-            "description": "Auth"
+            "name": "LOGIN DAN AUTENTIKASI",
+            "description": "LOGIN DAN AUTENTIKASI"
         }
     ]
 }
