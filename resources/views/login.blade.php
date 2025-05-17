@@ -24,9 +24,9 @@
       <!-- Kotak Kecil di Dalam -->
       <div class="bg-white rounded-xl shadow-lg p-8 w-[80%]">
         <h2 class="text-lg font-semibold mb-6">Login</h2>
-        <form>
+        <form action ="{{ route('Users.login') }}" method="POST">
           <div class="mb-6">
-            <input type="text" placeholder="Dokter1" class="w-full border-b border-gray-300 bg-transparent placeholder-gray-400 text-sm focus:outline-none py-2" />
+            <input type="text" placeholder="Username" class="w-full border-b border-gray-300 bg-transparent placeholder-gray-400 text-sm focus:outline-none py-2" />
           </div>
           <div class="mb-6">
             <input type="password" placeholder="********" class="w-full border-b border-gray-300 bg-transparent placeholder-gray-400 text-sm focus:outline-none py-2" />
