@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Input Pemeriksaan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen w-screen overflow-hidden bg-gray-100 flex">
+
+<aside class="w-28 bg-[#54B4C5] flex flex-col items-center">
+    <a href="dashboard.html">
+        <button class="w-20 h-20 mb-2 mt-4 flex flex-col items-center focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg focus:ring-[#0099a8] hover:bg-[#0099a8]">
+            <img src="../../../public/icon/dashboard.png" alt="Dashboard" class="w-7 h-7 mb-1 mt-4 filter invert">
+            <span class="text-xs font-sans text-white">Dashboard</span>
+        </button>
+    </a>
+    <a href="list_pasien.html">
+        <button class="shadow-md bg-[#0099a8] focus:ring-[#0D98B1] hover:bg-[#007a85] w-20 h-20 mb-2 flex flex-col items-center focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg">
+            <img src="../../../public/icon/lp.png" alt="Pasien" class="w-8 h-8 mb-1 mt-4 filter invert">
+            <span class="text-xs font-sans text-white">Pasien</span>
+        </button>
+    </a>
+    <a href="history.html">
+        <button class="w-20 h-20 mb-2 flex flex-col items-center  focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg focus:ring-[#0099a8] hover:bg-[#0099a8]">
+            <img src="../../../public/icon/history.png" alt="History" class="w-6 h-6 mb-1 mt-5 filter invert">
+            <span class="text-xs font-sans text-white">History</span>
+        </button>
+    </a>
+    <div class="mb-36"></div>
+    <a href="#">
+        <button class="w-20 h-20 mb-2 flex flex-col items-center  focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg focus:ring-[#0099a8] hover:bg-[#0099a8]">
+            <img src="../../../public/icon/acc.png" alt="Akun" class="w-6 h-6 mb-1 mt-5 filter invert">
+            <span class="text-xs font-sans text-white">Akun</span>
+        </button>
+    </a>
+    <a href="#">
+        <button class="w-20 h-20 mb-4 flex flex-col items-center  focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg focus:ring-[#0099a8] hover:bg-[#0099a8]">
+            <img src="../../../public/icon/logout.png" alt="Logout" class="w-6 h-6 mb-1 mt-5 filter invert">
+            <span class="text-xs font-sans text-white">Logout</span>
+        </button>
+    </a>
+</aside>
+
+<main class="flex-1 p-8 overflow-auto">
+    <div class="flex justify-between items-start mb-10"> <div>
+            <h1 class="text-lg font-bold">DATA PASIEN</h1>
+        </div>
+        <img src="../../../public/icon/simrs.png" alt="simrs" class="w-20 h-20 -mt-6"/>
+    </div>
+
+    <form class="grid grid-cols-2 gap-6 text-sm">
+        <div>
+            <label class="block font-semibold mb-1">No Reg</label>
+            <input type="text" disabled class="border border-gray-300 px-4 py-2 rounded bg-gray-100 text-gray-700 w-full">
+        </div>
+        <div>
+            <label class="block font-semibold mb-1">Nama</label>
+            <input type="text" disabled class="border border-gray-300 px-4 py-2 rounded bg-gray-100 text-gray-700 w-full">
+        </div>
+        <div>
+            <label class="block font-semibold mb-1">Suhu</label>
+            <div class="relative">
+                <input type="text" class="border border-gray-300 px-4 py-2 rounded w-full">
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600">°C</span>
+            </div>
+        </div>
+        <div>
+            <label class="block font-semibold mb-1">Tinggi Badan</label>
+            <div class="relative">
+                <input type="text" class="border border-gray-300 px-4 py-2 rounded w-full">
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600">cm</span>
+            </div>
+        </div>
+        <div>
+            <label class="block font-semibold mb-1">Tensi</label>
+            <div class="relative">
+                <input type="text" class="border border-gray-300 px-4 py-2 rounded w-full">
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600">mmHg</span>
+            </div>
+        </div>
+        <div>
+            <label class="block font-semibold mb-1">Berat Badan</label>
+            <div class="relative">
+                <input type="text" class="border border-gray-300 px-4 py-2 rounded w-full">
+                <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600">kg</span>
+            </div>
+        </div>
+        <div class="col-span-2">
+            <label class="block font-semibold mb-1">Keluhan</label>
+            <div class="">
+                <textarea class="border border-gray-300 w-full h-20 rounded p-2 resize-none"></textarea>
+            </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="absolute right-8 bottom-10 flex space-x-4">
+        <button type="button" class="bg-red-600 hover:bg-yellow-500 text-white px-4 py-2 rounded text-sm font-semibold">
+            BATAL
+        </button>
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm font-semibold">
+            SIMPAN
+        </button>
+    </div>
+</main>
+
+</body>
+</html>

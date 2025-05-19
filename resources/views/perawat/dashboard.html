@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard – Poli Mata</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen w-screen overflow-hidden bg-gray-100 flex">
+
+<aside class="w-28 bg-[#54B4C5] flex flex-col items-center">
+    <a href="dashboard.html">
+        <button class="shadow-md bg-[#0099a8] focus:ring-[#0D98B1] hover:bg-[#007a85] w-20 h-20 mb-2 mt-4 flex flex-col items-center focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg">
+            <img src="../../../public/icon/dashboard.png" alt="Dashboard" class="w-7 h-7 mb-1 mt-4 filter invert">
+            <span class="text-xs font-sans text-white">Dashboard</span>
+        </button>
+    </a>
+    <a href="list_pasien.html">
+        <button class="w-20 h-20 mb-2 flex flex-col items-center focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg focus:ring-[#0099a8] hover:bg-[#0099a8]">
+            <img src="../../../public/icon/lp.png" alt="Pasien" class="w-8 h-8 mb-1 mt-4 filter invert">
+            <span class="text-xs font-sans text-white">Pasien</span>
+        </button>
+    </a>
+    <a href="history.html">
+        <button class="w-20 h-20 mb-2 flex flex-col items-center  focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg focus:ring-[#0099a8] hover:bg-[#0099a8]">
+            <img src="../../../public/icon/history.png" alt="History" class="w-6 h-6 mb-1 mt-5 filter invert">
+            <span class="text-xs font-sans text-white">History</span>
+        </button>
+    </a>
+    <div class="mb-36"></div>
+    <a href="#">
+        <button class="w-20 h-20 mb-2 flex flex-col items-center  focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg focus:ring-[#0099a8] hover:bg-[#0099a8]">
+            <img src="../../../public/icon/acc.png" alt="Akun" class="w-6 h-6 mb-1 mt-5 filter invert">
+            <span class="text-xs font-sans text-white">Akun</span>
+        </button>
+    </a>
+    <a href="#">
+        <button class="w-20 h-20 mb-4 flex flex-col items-center  focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-lg focus:ring-[#0099a8] hover:bg-[#0099a8]">
+            <img src="../../../public/icon/logout.png" alt="Logout" class="w-6 h-6 mb-1 mt-5 filter invert">
+            <span class="text-xs font-sans text-white">Logout</span>
+        </button>
+    </a>
+</aside>
+
+  <main class="flex-1 p-8 overflow-auto">
+    <div class="flex justify-between items-start">
+      <div>
+        <h1 class="text-lg font-bold">PASIEN RAWAT JALAN <span class="font-normal">(POLI MATA)</span></h1>
+        <div class="mt-8 mb-6">
+          <div class="bg-[#c9d6ec] text-white inline-block rounded-md px-4 py-2 font-semibold w-[150px]">ANTRIAN <br/>
+            <span class="text-xl font-bold text-white block">0001</span>
+          </div>
+        </div>
+      </div>
+      <img src="../../../public/icon/simrs.png" alt="simrs" class="w-20 h-20 -mt-6"/>
+    </div>
+
+    <div class="mt-6">
+      <h2 class="font-semibold text-base mb-2">JADWAL DOKTER</h2>
+      <table class="min-w-full border border-gray-300 text-sm">
+        <thead class="bg-[#c9d6ec] text-gray-700">
+          <tr>
+            <th class="px-4 py-2 text-left">Nama Dokter</th>
+            <th class="px-4 py-2 text-left">Hari</th>
+            <th class="px-4 py-2 text-left">Jam</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-2">dr. Liana Ekawati, SpM(K), Msi. Med</td>
+            <td class="px-4 py-2">SENIN, KAMIS</td>
+            <td class="px-4 py-2">08:00–14:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
