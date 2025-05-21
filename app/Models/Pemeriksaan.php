@@ -11,8 +11,6 @@ class Pemeriksaan extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'ID_PEMERIKSAAN',
-        'ID_RESEP',
         'ID_DOKTER',
         'ID_PERAWAT',
         'RM',

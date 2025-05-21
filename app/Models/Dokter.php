@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Dokter extends Model
 {
+    use hasFactory;
     protected $table = 'dokter';
     protected $primaryKey = 'ID_DOKTER';
     public $timestamps = false;

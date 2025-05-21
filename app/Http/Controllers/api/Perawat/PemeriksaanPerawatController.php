@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\api\Dokter;
-use App\Http\Controllers\Controller;
-use App\Models\Pemeriksaan;
+namespace App\Http\Controllers;
+namespace App\Http\Controllers\api\Perawat;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
-
-
-class PemeriksaanDokterController extends Controller
+class PemeriksaanPerawatController extends Controller
 {
-    public function index()
+     public function index()
     {
         // Logic to display a list of pemeriksaan
         $pemeriksaan = Pemeriksaan::all();
@@ -26,9 +23,11 @@ class PemeriksaanDokterController extends Controller
             'ID_PERAWAT',
             'ID_RESEP',
             'RM',
-            'DIAGNOSA',
-            'TINDAKAN',   
-            'STATUS'      
+            'SUHU',
+            'TENSI',
+            'TINGGI_BADAN',
+            'BERAT_BADAN',
+            'STATUS'
         ]);
 
         $pemeriksaan = Pemeriksaan::create($data);
@@ -72,9 +71,11 @@ class PemeriksaanDokterController extends Controller
                 'ID_PERAWAT',
                 'ID_RESEP',
                 'RM',
-                'DIAGNOSA',
-                'TINDAKAN',   
-                'STATUS'      
+                'SUHU',
+                'TENSI',
+                'TINGGI_BADAN',
+                'BERAT_BADAN',
+                'STATUS'
             ]);
             $pemeriksaan->update($data);
             return response()->json([
@@ -98,5 +99,4 @@ class PemeriksaanDokterController extends Controller
             return response()->json(['message' => 'Pemeriksaan not found'], 404);
         }
     }
-}  
-
+}

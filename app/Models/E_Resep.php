@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Obat extends Model
+class E_Resep extends Model
 {
-    protected $table = 'obat';
-    protected $primaryKey = 'ID_RESEP';
+    
+    protected $table = 'e-resep';
+    protected $primaryKey = 'NO_RESEP';
     public $timestamps = false;
 
     protected $fillable = [

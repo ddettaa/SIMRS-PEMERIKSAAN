@@ -15,7 +15,8 @@ class Users extends Model
        'USERNAME',
        'PASSWORD',
        'ROLE',
-       'NAMA_LENGKAP'
+       'NAMA_LENGKAP',
+       'TOKEN'
     ];
 
 }
