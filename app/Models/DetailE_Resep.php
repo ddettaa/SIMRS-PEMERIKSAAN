@@ -5,18 +5,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Perawat extends Model
+class DetailE_Resep extends Model
 {
     use HasFactory;
-    protected $table = 'perawat';
-    protected $primaryKey = 'ID_PERAWAT';
+    protected $table = 'detail_e_resep';
+    protected $primaryKey = 'ID_RESEP';
     public $timestamps = false;
 
     protected $fillable = [
-        'ID_PERAWAT',
-        'ID_USER',
-        'NAMA_PERAWAT',
-        'NO_HP_PERAWAT',
-        'EMAIL_PERAWAT'
+        'ID_RESEP',
+        'ID_OBAT',
+        'JUMLAH',
+        'ATURAN_PAKAI'
     ];
 }

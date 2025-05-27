@@ -56,12 +56,586 @@
                     }
                 ]
             }
+        },
+        "/api/dokter/eresep": {
+            "get": {
+                "tags": [
+                    "Eresep"
+                ],
+                "summary": "Ambil semua data eresep",
+                "operationId": "97a52a735aa6561cf7416a5e95e5bdb4",
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mengambil data"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Eresep"
+                ],
+                "summary": "Simpan data eresep",
+                "operationId": "4f71b980364f3265816defbd5a73a3c1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "ID_RESEP",
+                                    "ID_PEMERIKSAAN"
+                                ],
+                                "properties": {
+                                    "ID_RESEP": {
+                                        "type": "string",
+                                        "example": "R001"
+                                    },
+                                    "ID_PEMERIKSAAN": {
+                                        "type": "string",
+                                        "example": "P001"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Data berhasil disimpan"
+                    },
+                    "400": {
+                        "description": "Data tidak valid"
+                    }
+                }
+            }
+        },
+        "/api/dokter/eresep/{id}": {
+            "get": {
+                "tags": [
+                    "Eresep"
+                ],
+                "summary": "Ambil data eresep berdasarkan ID",
+                "operationId": "70842caf38232abaef5dc089c867c70b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mengambil data"
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Eresep"
+                ],
+                "summary": "Update data eresep",
+                "operationId": "8c06fb32388e3634beeebc4a6b934e6d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "ID_RESEP",
+                                    "ID_PEMERIKSAAN"
+                                ],
+                                "properties": {
+                                    "ID_RESEP": {
+                                        "type": "string",
+                                        "example": "R001"
+                                    },
+                                    "ID_PEMERIKSAAN": {
+                                        "type": "string",
+                                        "example": "P001"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Data berhasil diupdate"
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Eresep"
+                ],
+                "summary": "Hapus data eresep",
+                "operationId": "25414dd7fa1f1f16c380630c28eb4fbe",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Data berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            }
+        },
+        "/api/dokter/pemeriksaan": {
+            "get": {
+                "tags": [
+                    "Pemeriksaan Dokter"
+                ],
+                "summary": "Ambil semua data pemeriksaan",
+                "operationId": "2bd741eae4d8aff769da8877701c72b6",
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mengambil data"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Pemeriksaan Dokter"
+                ],
+                "summary": "Simpan data pemeriksaan dokter",
+                "description": "API untuk mengelola pemeriksaan dokter",
+                "operationId": "45fe818951b4f7f2c05e9febb7ee3c26",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "ID_PEMERIKSAAN",
+                                    "ID_DOKTER",
+                                    "ID_PERAWAT",
+                                    "ID_RESEP",
+                                    "RM",
+                                    "DIAGNOSA",
+                                    "TINDAKAN",
+                                    "STATUS"
+                                ],
+                                "properties": {
+                                    "ID_PEMERIKSAAN": {
+                                        "type": "string",
+                                        "example": "P001"
+                                    },
+                                    "ID_DOKTER": {
+                                        "type": "string",
+                                        "example": "D001"
+                                    },
+                                    "ID_PERAWAT": {
+                                        "type": "string",
+                                        "example": "P001"
+                                    },
+                                    "ID_RESEP": {
+                                        "type": "string",
+                                        "example": "R001"
+                                    },
+                                    "RM": {
+                                        "type": "string",
+                                        "example": "RM001"
+                                    },
+                                    "DIAGNOSA": {
+                                        "type": "string",
+                                        "example": "Flu"
+                                    },
+                                    "TINDAKAN": {
+                                        "type": "string",
+                                        "example": "Pemeriksaan Umum"
+                                    },
+                                    "STATUS": {
+                                        "type": "string",
+                                        "example": "Selesai"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Data berhasil disimpan"
+                    },
+                    "500": {
+                        "description": "Kesalahan server"
+                    }
+                }
+            }
+        },
+        "/api/dokter/pemeriksaan/{id}": {
+            "get": {
+                "tags": [
+                    "Pemeriksaan Dokter"
+                ],
+                "summary": "Ambil data pemeriksaan berdasarkan ID",
+                "operationId": "fb7e7971063afd778dab8d4bbcd21195",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Pemeriksaan",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "P001"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Data ditemukan"
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Pemeriksaan Dokter"
+                ],
+                "summary": "Update data pemeriksaan dokter",
+                "operationId": "2ddef434e9125d61afe005bc46c9be19",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Pemeriksaan",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "P001"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "ID_DOKTER",
+                                    "DIAGNOSA",
+                                    "TINDAKAN",
+                                    "STATUS"
+                                ],
+                                "properties": {
+                                    "ID_DOKTER": {
+                                        "type": "string",
+                                        "example": "D002"
+                                    },
+                                    "DIAGNOSA": {
+                                        "type": "string",
+                                        "example": "Demam"
+                                    },
+                                    "TINDAKAN": {
+                                        "type": "string",
+                                        "example": "Pemeriksaan lanjutan"
+                                    },
+                                    "STATUS": {
+                                        "type": "string",
+                                        "example": "Dalam Proses"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Data berhasil diperbarui"
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Pemeriksaan Dokter"
+                ],
+                "summary": "Hapus data pemeriksaan berdasarkan ID",
+                "operationId": "da1886aa5da27d02665fc84c41fd0ebc",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Pemeriksaan",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "P001"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Data berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            }
+        },
+        "/api/perawat/pemeriksaan": {
+            "get": {
+                "tags": [
+                    "Pemeriksaan Awal"
+                ],
+                "summary": "Ambil semua data pemeriksaan",
+                "operationId": "2a4a2ad8da82e7a2f3ef28135d0a0d01",
+                "responses": {
+                    "200": {
+                        "description": "Berhasil mengambil data"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Pemeriksaan Awal"
+                ],
+                "summary": "Tambah pemeriksaan awal",
+                "operationId": "6d7341d3dfe2520c4d5989b27d9a19bc",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "ID_PEMERIKSAAN",
+                                    "ID_DOKTER",
+                                    "ID_PERAWAT",
+                                    "ID_RESEP",
+                                    "RM",
+                                    "STATUS"
+                                ],
+                                "properties": {
+                                    "ID_PEMERIKSAAN": {
+                                        "type": "string",
+                                        "example": "P001"
+                                    },
+                                    "ID_DOKTER": {
+                                        "type": "string",
+                                        "example": "D001"
+                                    },
+                                    "ID_PERAWAT": {
+                                        "type": "string",
+                                        "example": "P001"
+                                    },
+                                    "ID_RESEP": {
+                                        "type": "string",
+                                        "example": "R001"
+                                    },
+                                    "RM": {
+                                        "type": "string",
+                                        "example": "RM001"
+                                    },
+                                    "SUHU": {
+                                        "type": "string",
+                                        "example": "36"
+                                    },
+                                    "TENSI": {
+                                        "type": "string",
+                                        "example": "120/80"
+                                    },
+                                    "TINGGI_BADAN": {
+                                        "type": "string",
+                                        "example": "176"
+                                    },
+                                    "BERAT_BADAN": {
+                                        "type": "string",
+                                        "example": "70"
+                                    },
+                                    "STATUS": {
+                                        "type": "string",
+                                        "example": "Selesai"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Data Terkirim"
+                    },
+                    "400": {
+                        "description": "Data tidak valid"
+                    }
+                }
+            }
+        },
+        "/api/perawat/pemeriksaan/{id}": {
+            "get": {
+                "tags": [
+                    "Pemeriksaan Awal"
+                ],
+                "summary": "Ambil data pemeriksaan berdasarkan ID",
+                "operationId": "489be6ff3f7364fc5f3d948944644185",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Pemeriksaan",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "P001"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Data ditemukan"
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Pemeriksaan Awal"
+                ],
+                "summary": "Update data pemeriksaan Awal",
+                "operationId": "09d14feca756f983d0562edc7052beab",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Pemeriksaan",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "P001"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "ID_PERAWAT": {
+                                        "type": "string",
+                                        "example": "D002"
+                                    },
+                                    "SUHU": {
+                                        "type": "string",
+                                        "example": "45"
+                                    },
+                                    "TENSI": {
+                                        "type": "string",
+                                        "example": "70/120"
+                                    },
+                                    "BERAT_BADAN": {
+                                        "type": "string",
+                                        "example": "70"
+                                    },
+                                    "TINGGI_BADAN": {
+                                        "type": "string",
+                                        "example": "176"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Data berhasil diperbarui"
+                    },
+                    "400": {
+                        "description": "Permintaan tidak valid"
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Pemeriksaan Awal"
+                ],
+                "summary": "Hapus data pemeriksaan berdasarkan ID",
+                "operationId": "ebb0054c586c39595e7552deec33228c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID Pemeriksaan",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "P001"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Data berhasil dihapus"
+                    },
+                    "404": {
+                        "description": "Data tidak ditemukan"
+                    }
+                }
+            }
         }
     },
     "tags": [
         {
             "name": "LOGIN DAN AUTENTIKASI",
             "description": "LOGIN DAN AUTENTIKASI"
+        },
+        {
+            "name": "Eresep",
+            "description": "Eresep"
+        },
+        {
+            "name": "Pemeriksaan Dokter",
+            "description": "Pemeriksaan Dokter"
+        },
+        {
+            "name": "Pemeriksaan Awal",
+            "description": "Pemeriksaan Awal"
         }
     ]
 }
