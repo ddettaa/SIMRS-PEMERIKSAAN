@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\api\Dokter\PemeriksaanDokterController;
 use App\Http\Controllers\api\Perawat\PemeriksaanPerawatController;
+use App\Http\Controllers\api\Dokter\EresepController;
+use App\Http\Controllers\api\Dokter\DetailE_ResepController;
+use App\Http\Controllers\api\PoliController;
 
 // API Route PemeriksaanDokter
 Route::get('dokter/pemeriksaan', [PemeriksaanDokterController::class, 'index']);
@@ -27,4 +30,9 @@ Route::post('dokter/eresep', [EresepController::class, 'store']);
 Route::put('dokter/eresep/{id}', [EresepController::class, 'update']);
 Route::delete('dokter/eresep/{id}', [EresepController::class, 'destroy']);
 
-// API Route E-Resep Detail
+// API Route Poli
+Route::get('poli', [PoliController::class, 'index']);
+Route::get('poli/{id}', [PoliController::class, 'show']);
+Route::post('poli', [PoliController::class, 'store']);
+Route::put('poli/{id}', [PoliController::class, 'update']);
+Route::delete('poli/{id}', [PoliController::class, 'destroy']);
