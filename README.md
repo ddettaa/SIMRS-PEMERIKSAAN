@@ -32,7 +32,7 @@ Berikut adalah anggota tim kami beserta peran masing-masing:
 
 
 ---
-<h2 align="left">Kami Semua code With</h2>
+<h2 align="left">Bahasa Pemrograman Yang Dipakai</h2>
 
 ###
 
